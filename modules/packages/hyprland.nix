@@ -12,16 +12,15 @@
     #     sha256 = "sha256-n/7fwGvx9F+ENO65DcfI+gZDZnocWj4lvic9OG5vZ98=";
     #   };
     # });
-    package = pkgs.hyprland.override {
-      legacyRenderer = true;
-    };
+    package = pkgs.unstable.hyprland;
     xwayland.enable = true;
   };
 
+  services.hypridle.enable = true;
+  programs.hyprlock.enable = true;
+
   environment.systemPackages = with pkgs; [
     hyprcursor
-    hyprlock
-    hypridle
     hyprpaper
     hyprutils
   ];

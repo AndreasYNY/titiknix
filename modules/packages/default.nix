@@ -1,12 +1,12 @@
-{ pkgs, lib, ... }: {
+{ pkgs, config, lib, ... }: {
   imports = [
     ./hyprland.nix
     ./steam.nix
-    ./docker.nix
-    ./ollama.nix
-    ./syncthing.nix
-    # ./stylix.nix
+    #./docker.nix
+    #./ollama.nix
+    #./syncthing.nix
   ];
+
 
   nixpkgs.config.allowUnfree = true;
 
@@ -16,6 +16,9 @@
   services.gnome.gnome-keyring.enable = true;
 
   services.libinput.enable = true;
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
@@ -24,13 +27,25 @@
     cryptsetup
     gamemode
     p7zip
-    # thin-provisioning-tools
-    osu-lazer-bin
+    unstable.osu-lazer-bin
     wineWowPackages.waylandFull
     winetricks
     git
-    nautilus
+    jq
+    xdelta
+    #nautilus
   ];
+
+  nix.settings = {
+    substituters = [ 
+      "https://ezkea.cachix.org"
+      "https://hyprland.cachix.org" 
+    ];
+    trusted-public-keys = [ 
+      "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+    ];
+  };
 
   # fish
   programs.bash = {

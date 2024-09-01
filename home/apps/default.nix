@@ -1,11 +1,5 @@
 { pkgs, config, lib, ... }:
-let
-  # unstable = import <nixpkgs-unstable> {
-  #   config = config.nixpkgs.config;
-  # };
-in
 {
-
   imports = [
     ./firefox
     ./foot
@@ -49,8 +43,9 @@ in
     python3
     github-desktop
     tor-browser
+    jetbrains.idea-community-bin
     lutris-free
-    file-roller
+    # file-roller
     mongodb-compass
     vesktop
     spotify
@@ -62,14 +57,14 @@ in
     pavucontrol
     rustup
     fastfetch
-    termusic
     appimage-run
     # unstable.zed-editor
-    # unstable.osu-lazer-bin
     orchis-theme
     opentabletdriver
     # ida-free
     # sayonara
+
+    jq
 
     # some dev app
     nodejs_18

@@ -62,6 +62,7 @@
 
   services.lvm.boot.thin.enable = true;
   hardware.graphics.enable = true;
+  # hardware.amdgpu.amdvlk.enable = true;
   # hardware.opengl.enable = true;
   # hardware.opengl.driSupport = true;
   hardware.opentabletdriver.enable = true;

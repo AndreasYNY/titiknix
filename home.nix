@@ -10,18 +10,12 @@
     stateVersion = "24.05";
   };
 
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      rebuild = "sudo nixos-rebuild switch";
-    };
-  };
-
   programs.fish = {
     enable = true;
     interactiveShellInit = '' set fish_greeting '';
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --";
+      hms = "home-manager switch --flake ~/nix/";
+      nrs = "doas nixos-rebuild switch --flake ~/nix/";
     };
   };
 }

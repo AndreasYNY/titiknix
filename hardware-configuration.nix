@@ -16,19 +16,19 @@
 
   fileSystems."/" =
     {
-      device = "/dev/disk/by-uuid/ce342f45-1c76-4815-a4a7-af24171a6952";
+      device = "/dev/disk/by-uuid/e529428e-32e8-44ea-a11b-6441fbd692b6";
       fsType = "btrfs";
     };
 
- fileSystems."/home/bad/Drive" =
-   {
-     device = "/dev/disk/by-uuid/56b8a478-bdb7-4628-bf0d-f2f2875266e7";
-     fsType = "btrfs";
-   };
+  fileSystems."/home/bad/Drive" =
+    {
+      device = "/dev/disk/by-uuid/56b8a478-bdb7-4628-bf0d-f2f2875266e7";
+      fsType = "btrfs";
+    };
 
   fileSystems."/boot" =
     {
-      device = "/dev/disk/by-uuid/71E6-03C0";
+      device = "/dev/disk/by-uuid/5916-ABC1";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
@@ -46,3 +46,4 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
+
