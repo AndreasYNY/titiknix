@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ../../hardware-configuration.nix
+      ./hardware-configuration.nix
       ../../modules/doas
       ../../modules/fonts
       ../../modules/linux
