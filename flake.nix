@@ -31,12 +31,15 @@
         inherit system;
         modules = [
           ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
-          ./configuration.nix
-          {
-            imports = [ aagl.nixosModules.default ];
-            nix.settings = aagl.nixConfig;
-            programs.anime-game-launcher.enable = true;
-          }
+          ./host/dragon/configuration.nix
+        ];
+      };
+
+      nixosConfigurations.razor = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+          ./host/razor/configuration.nix
         ];
       };
 

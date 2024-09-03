@@ -3,12 +3,12 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
-      ./modules/doas
-      ./modules/fonts
-      ./modules/linux
-      ./modules/packages
-      ./modules/xdg
+      ../../hardware-configuration.nix
+      ../../modules/doas
+      ../../modules/fonts
+      ../../modules/linux
+      ../../modules/packages
+      ../../modules/xdg
     ];
 
   # nix.settings.substituters = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
