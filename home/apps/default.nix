@@ -35,18 +35,17 @@
     tmux
     keepassxc
     alacritty
-    kitty
     motrix
     zip
     unzip
     rar
     python3
+    python312Packages.tkinter
     github-desktop
     tor-browser
     jetbrains.idea-community-bin
     lutris-free
     # file-roller
-    mongodb-compass
     vesktop
     spotify
     freetube
@@ -55,15 +54,12 @@
     grim
     wget
     pavucontrol
-    rustup
     fastfetch
     appimage-run
     # unstable.zed-editor
-    orchis-theme
     opentabletdriver
     # ida-free
     # sayonara
-
     jq
 
     # some dev app

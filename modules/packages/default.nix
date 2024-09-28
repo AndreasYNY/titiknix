@@ -2,16 +2,21 @@
   imports = [
     ./hyprland.nix
     ./steam.nix
-    #./docker.nix
+    ./docker.nix
     #./ollama.nix
-    #./syncthing.nix
+    ./syncthing.nix
   ];
 
 
   nixpkgs.config.allowUnfree = true;
 
   programs.ssh.startAgent = true;
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      xorg.libX11
+    ];
+  };
 
   services.gnome.gnome-keyring.enable = true;
 
@@ -19,6 +24,7 @@
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+  virtualisation.waydroid.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
@@ -32,7 +38,13 @@
     winetricks
     git
     jq
+    piper
+    libratbag
+    tk
     xdelta
+    prismlauncher
+    lunar-client
+    rnote
     #nautilus
   ];
 
